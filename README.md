@@ -1,4 +1,4 @@
--
+
 # Ticketmaster
 ## Integrantes
 
@@ -56,22 +56,12 @@ Desde la pantalla de detalle, el usuario podrá interactuar con el estado de fav
 Wireframes
 
 Los siguientes elementos representan la estructura visual y los flujos de las principales pantallas de la aplicación:
-### Pantalla Inicio de sesión (Login)
-Contiene los campos de acceso para nombre y contraseña, junto con los botones para iniciar sesión y la opción de recuperación `¿Olvidaste tu contraseña?`, y botón 'Registrarse'.
-<img width="414" height="896" alt="Proyecto" src="https://github.com/user-attachments/assets/ae6c7041-4d15-4cad-9b67-0cb99682269e" />
-  
 
-### Pantalla Crear cuenta (Log up)
-Muestra la sección para registrarse ingresando nombre, correo electrónico y contraseña, incluyendo un enlace de redirección rápida `¿Ya tienes cuenta? Presiona aqui`.
-<img width="414" height="896" alt="Crearcuenta" src="https://github.com/user-attachments/assets/192b7d72-ae69-44da-b851-e326c685ff5e" />
-    
-  
 
 ### Pantalla principal (Home)
 Contiene la barra de búsqueda, eventos destacados y recomendaciones.
 <img width="414" height="896" alt="Inicio" src="https://github.com/user-attachments/assets/e3e95691-47bc-42f9-a649-3d9c5c282af0" />
 
-      
 
 ### Resultados de búsqueda y búsqueda en progreso
 Muestra los estados de carga mediante skeletons y la lista filtrada de eventos según el término ingresado.
@@ -88,6 +78,15 @@ Muestra la información completa del evento (imagen, nombre, fecha/hora, sinopsi
 Muestra los eventos que el usuario ha guardado localmente en la aplicación.
 <img width="414" height="896" alt="Favorito" src="https://github.com/user-attachments/assets/2f1323cc-6338-4b7e-a6a4-8595aba2cc1a" />
 
+Pantallas Extras del MVP 
+### Pantalla Inicio de sesión (Login)
+Contiene los accesos generales de usuario
+<img width="414" height="896" alt="Proyecto" src="https://github.com/user-attachments/assets/ae6c7041-4d15-4cad-9b67-0cb99682269e" />
+  
+
+### Pantalla Crear cuenta (Log up)
+Muestra la sección de registro de nuevos usuarios.
+<img width="414" height="896" alt="Crearcuenta" src="https://github.com/user-attachments/assets/192b7d72-ae69-44da-b851-e326c685ff5e" />
 
 ## Tecnologías previstas
 
@@ -108,4 +107,4 @@ Actualmente se encuentran definidos:
 - El objetivo del proyecto.
 - El MVP.
 - El flujo principal de usuario.
-- Los wireframes iniciales.
+- Los wireframes iniciales y pantallas adicionales.
