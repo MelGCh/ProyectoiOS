@@ -88,7 +88,7 @@ Pantalla Crear cuenta (Log up)
 Muestra la sección de registro de nuevos usuarios. 
 <img width="414" height="896" alt="Crearcuenta" src="https://github.com/user-attachments/assets/192b7d72-ae69-44da-b851-e326c685ff5e" />
 
-## Acessibilidad
+## Accesibilidad de las pantallas
 ### Pantalla principal (Home) 
 <img width="414" height="896" alt="inicoA" src="https://github.com/user-attachments/assets/cb2cdf22-83b7-4839-9c7f-e5ab8956bfaf" />
 ### Busqueda  
