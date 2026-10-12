@@ -1,3 +1,4 @@
+
 # Ticketmaster
 ## Integrantes
 
@@ -56,11 +57,12 @@ Wireframes
 
 Los siguientes elementos representan la estructura visual y los flujos de las principales pantallas de la aplicación:
     
+
+
 ### Pantalla principal (Home)
 Contiene la barra de búsqueda, eventos destacados y recomendaciones.
 <img width="414" height="896" alt="Inicio" src="https://github.com/user-attachments/assets/e3e95691-47bc-42f9-a649-3d9c5c282af0" />
 
-      
 
 ### Resultados de búsqueda y búsqueda en progreso
 Muestra los estados de carga mediante skeletons y la lista filtrada de eventos según el término ingresado.
@@ -79,7 +81,8 @@ Muestra los eventos que el usuario ha guardado localmente en la aplicación.
 ### Pantallas Extras del MVP
 
 
-Pantalla Inicio de sesión (Login)
+Pantallas Extras del MVP 
+### Pantalla Inicio de sesión (Login)
 Contiene los accesos generales de usuario
 <img width="414" height="896" alt="Proyecto" src="https://github.com/user-attachments/assets/ae6c7041-4d15-4cad-9b67-0cb99682269e" />
   
