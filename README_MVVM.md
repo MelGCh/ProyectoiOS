@@ -1,4 +1,21 @@
-# Análisis de MVVM - Ticketmaster
+
+# Análisis de MVVM y Arquitectura - Ticketmaster
+
+## 1. ¿Por qué es conveniente separar responsabilidades?
+Es conveniente porque si juntamos todo en un solo lugar, el código se vuelve muy difícil de mantener, probar y entender conforme la app va creciendo. Separar las responsabilidades sirve para que cada parte haga una sola cosa y funcione de manera correcta.
+
+## 2. Diferencia entre interfaz, datos y lógica
+- **Interfaz (UI):** Es todo lo visual que el usuario ve y toca.
+- **Datos (Model):** Estructuras de información que maneja la app.
+- **Lógica de la app:** Las reglas de negocio, como hacer peticiones a una API, filtrar resultados, validar campos o manejar los estados de carga.
+
+## 3. ¿Qué problemas ocurren cuando una vista concentra demasiadas responsabilidades?
+Se vuelven archivos gigantescos y difíciles de leer. Además, si se quiere cambiar algo del diseño rompe la lógica, y hacer pruebas unitarias se vuelve prácticamente imposible porque todo se llega a mezclar.
+
+## 4. ¿Qué es cada componente de MVVM?
+- **Model:** Estructura que guarda los datos.
+- **View:** Pantalla visual en SwiftUI que muestra la interfaz y reacciona a las acciones del usuario.
+- **ViewModel:** Intermediario que maneja la lógica de negocio y los estados de la pantalla, pasándole los datos limpios a la vista.
 
 El proyecto está organizado de la siguiente manera:
 
