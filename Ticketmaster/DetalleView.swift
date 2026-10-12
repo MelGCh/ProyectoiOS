@@ -7,28 +7,12 @@ import SwiftUI
 
 struct DetalleView: View {
 
+    let evento: Evento
+
+    @Environment(FavoritosViewModel.self) var favoritosViewModel
+
     var body: some View {
         VStack {
-
-            //Barra superior
-
-            HStack {
-                Button {
-                    print("Regresar")
-                } label: {
-                    Image(systemName: "arrow.left")
-                        .font(.system(size: 24))
-                        .foregroundStyle(.white)
-                }
-
-                Spacer()
-
-                Text("Detalles del evento")
-                    .font(.system(size: 20))
-                    .foregroundStyle(.white)
-            }
-            .padding()
-            .background(.black)
 
             ScrollView {
                 VStack {
@@ -37,7 +21,7 @@ struct DetalleView: View {
 
                     HStack {
                         Spacer()
-                        Image(systemName: "music.note")
+                        Image(systemName: evento.icono)
                             .font(.system(size: 90))
                             .foregroundStyle(.white)
                         Spacer()
@@ -51,7 +35,7 @@ struct DetalleView: View {
 
                     VStack {
                         HStack {
-                            Text("Don Omar: El regreso")
+                            Text(evento.nombre)
                                 .font(.system(size: 26))
                                 .bold()
                                 .foregroundStyle(.white)
@@ -59,9 +43,9 @@ struct DetalleView: View {
                             Spacer()
 
                             Button {
-                                print("Favorito Don Omar: El regreso")
+                                favoritosViewModel.alternar(evento)
                             } label: {
-                                Image(systemName: "heart")
+                                Image(systemName: favoritosViewModel.esFavorito(evento) ? "heart.fill" : "heart")
                                     .font(.system(size: 28))
                                     .foregroundStyle(.white)
                             }
@@ -72,7 +56,7 @@ struct DetalleView: View {
                             Text("Fecha:")
                                 .bold()
                                 .foregroundStyle(.white)
-                            Text("12 Diciembre | 20:00 hrs")
+                            Text("\(evento.fecha) | \(evento.hora) hrs")
                                 .foregroundStyle(.white)
                             Spacer()
                         }
@@ -81,7 +65,7 @@ struct DetalleView: View {
                             Text("Lugar:")
                                 .bold()
                                 .foregroundStyle(.white)
-                            Text("Palacio de los Deportes, CDMX")
+                            Text("\(evento.lugar), \(evento.ciudad)")
                                 .foregroundStyle(.white)
                             Spacer()
                         }
@@ -96,7 +80,7 @@ struct DetalleView: View {
                         .padding(.top, 30)
 
                         HStack {
-                            Text("¡Prepárate para vivir la noche más eléctrica! Don Omar, el “Rey del Reggaetón”, regresa para dejar sin aliento con su esperada presentación en vivo: “El Regreso”.")
+                            Text(evento.descripcion)
                                 .foregroundStyle(.white)
                             Spacer()
                         }
@@ -110,22 +94,30 @@ struct DetalleView: View {
 
             //Botón
 
-            Button {
-                print("Comprar o Consultar Entradas")
-            } label: {
-                Text("Comprar o Consultar Entradas")
-                    .bold()
-                    .foregroundStyle(.white)
-                    .padding(.horizontal, 30)
-                    .padding(.vertical, 18)
-                    .background(.black)
-                    .clipShape(RoundedRectangle(cornerRadius: 20))
+            if let url = URL(string: evento.enlaceEntradas) {
+                Link(destination: url) {
+                    Text("Comprar o Consultar Entradas")
+                        .bold()
+                        .foregroundStyle(.white)
+                        .padding(.horizontal, 30)
+                        .padding(.vertical, 18)
+                        .background(.black)
+                        .clipShape(RoundedRectangle(cornerRadius: 20))
+                }
+                .padding(.vertical, 20)
             }
-            .padding(.vertical, 20)
         }
+        .navigationTitle("Detalles del evento")
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbarBackground(.black, for: .navigationBar)
+        .toolbarBackground(.visible, for: .navigationBar)
+        .toolbarColorScheme(.dark, for: .navigationBar)
     }
 }
 
 #Preview {
-    DetalleView()
+    NavigationStack {
+        DetalleView(evento: eventosDeEjemplo[2])
+    }
+    .environment(FavoritosViewModel())
 }
