@@ -56,6 +56,7 @@ Desde la pantalla de detalle, el usuario podrá interactuar con el estado de fav
 Wireframes
 
 Los siguientes elementos representan la estructura visual y los flujos de las principales pantallas de la aplicación:
+    
 
 
 ### Pantalla principal (Home)
@@ -77,6 +78,8 @@ Muestra la información completa del evento (imagen, nombre, fecha/hora, sinopsi
 ### Favoritos
 Muestra los eventos que el usuario ha guardado localmente en la aplicación.
 <img width="414" height="896" alt="Favorito" src="https://github.com/user-attachments/assets/2f1323cc-6338-4b7e-a6a4-8595aba2cc1a" />
+### Pantallas Extras del MVP
+
 
 Pantallas Extras del MVP 
 ### Pantalla Inicio de sesión (Login)
@@ -84,9 +87,19 @@ Contiene los accesos generales de usuario
 <img width="414" height="896" alt="Proyecto" src="https://github.com/user-attachments/assets/ae6c7041-4d15-4cad-9b67-0cb99682269e" />
   
 
-### Pantalla Crear cuenta (Log up)
-Muestra la sección de registro de nuevos usuarios.
+Pantalla Crear cuenta (Log up)
+Muestra la sección de registro de nuevos usuarios. 
 <img width="414" height="896" alt="Crearcuenta" src="https://github.com/user-attachments/assets/192b7d72-ae69-44da-b851-e326c685ff5e" />
+
+## Accesibilidad de las pantallas
+### Pantalla principal (Home) 
+<img width="414" height="896" alt="inicoA" src="https://github.com/user-attachments/assets/cb2cdf22-83b7-4839-9c7f-e5ab8956bfaf" />
+### Busqueda  
+<img width="414" height="896" alt="busquedaA" src="https://github.com/user-attachments/assets/95749695-601e-4153-acfd-663643187f6c" />
+### Detalle de evento 
+<img width="414" height="896" alt="detallesA" src="https://github.com/user-attachments/assets/ded43637-3c16-414a-91cf-c37b4fea3714" />
+### Favoritos
+<img width="414" height="896" alt="favA" src="https://github.com/user-attachments/assets/9b8679d7-3527-4d85-bf24-f997582a279c" />
 
 ## Tecnologías previstas
 
