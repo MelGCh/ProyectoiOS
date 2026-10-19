@@ -1,13 +1,13 @@
 //
-//  BusquedaResultadosView.swift
+//  SearchResultsView.swift
 //  Ticketmaster
 //
 
 import SwiftUI
 
-struct BusquedaResultadosView: View {
+struct SearchResultsView: View {
     
-    @State var busqueda: String = "Concierto"
+    @State var searchText: String = "Concierto"
     
     var body: some View {
         ScrollView {
@@ -37,7 +37,7 @@ struct BusquedaResultadosView: View {
                                 .foregroundStyle(.black)
                                 .padding(.vertical, 12)
                                 .padding(.leading, 12)
-                            TextField(text: $busqueda) {
+                            TextField(text: $searchText) {
                                 Text("Buscar eventos")
                             }
                         }
@@ -238,5 +238,5 @@ struct BusquedaResultadosView: View {
 }
 
 #Preview {
-    BusquedaResultadosView()
+    SearchResultsView()
 }

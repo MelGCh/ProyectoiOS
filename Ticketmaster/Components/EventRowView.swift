@@ -1,22 +1,22 @@
 //
-//  EventoFilaView.swift
+//  EventRowView.swift
 //  Ticketmaster
 //
 
 import SwiftUI
 
 // La fila de evento. Se usa en Inicio (corazón) y en Favoritos (quitar)
-struct EventoFilaView: View {
+struct EventRowView: View {
 
-    let evento: Evento
-    let iconoBoton: String
-    let accion: () -> Void
+    let event: Event
+    let buttonIcon: String
+    let action: () -> Void
 
     var body: some View {
         HStack {
-            NavigationLink(value: evento) {
+            NavigationLink(value: event) {
                 HStack {
-                    Image(systemName: evento.icono)
+                    Image(systemName: event.icon)
                         .font(.system(size: 50))
                         .foregroundStyle(.white)
                         .padding(30)
@@ -24,14 +24,14 @@ struct EventoFilaView: View {
                         .clipShape(RoundedRectangle(cornerRadius: 12))
 
                     VStack(alignment: .leading) {
-                        Text(evento.nombre)
+                        Text(event.name)
                             .bold()
 
                         HStack {
                             Text("Fecha:")
                                 .font(.system(size: 14))
                                 .bold()
-                            Text("\(evento.fecha) | \(evento.hora) hrs")
+                            Text("\(event.date) | \(event.time) hrs")
                                 .font(.system(size: 14))
                         }
 
@@ -39,7 +39,7 @@ struct EventoFilaView: View {
                             Text("Lugar:")
                                 .font(.system(size: 14))
                                 .bold()
-                            Text("\(evento.lugar), \(evento.ciudad)")
+                            Text("\(event.venue), \(event.city)")
                                 .font(.system(size: 14))
                         }
                     }
@@ -53,9 +53,9 @@ struct EventoFilaView: View {
             VStack {
                 Spacer()
                 Button {
-                    accion()
+                    action()
                 } label: {
-                    Image(systemName: iconoBoton)
+                    Image(systemName: buttonIcon)
                         .font(.system(size: 26))
                         .foregroundStyle(.black)
                 }
@@ -72,7 +72,7 @@ struct EventoFilaView: View {
 
 #Preview {
     NavigationStack {
-        EventoFilaView(evento: eventosDeEjemplo[2], iconoBoton: "heart") { }
+        EventRowView(event: sampleEvents[2], buttonIcon: "heart") { }
             .padding()
     }
 }

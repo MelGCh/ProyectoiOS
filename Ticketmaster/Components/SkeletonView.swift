@@ -1,12 +1,12 @@
 //
-//  EsqueletoView.swift
+//  SkeletonView.swift
 //  Ticketmaster
 //
 
 import SwiftUI
 
 // Los cuadros grises que se ven mientras cargan los eventos
-struct EsqueletoView: View {
+struct SkeletonView: View {
 
     var body: some View {
         VStack {
@@ -28,5 +28,5 @@ struct EsqueletoView: View {
 }
 
 #Preview {
-    EsqueletoView()
+    SkeletonView()
 }

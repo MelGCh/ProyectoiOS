@@ -8,14 +8,16 @@ import SwiftUI
 
 struct ContentView: View {
 
+    let homeViewModel: HomeViewModel
+
     var body: some View {
         TabView {
-            InicioView()
+            HomeView(viewModel: homeViewModel)
                 .tabItem {
                     Label("Inicio", systemImage: "house")
                 }
 
-            FavoritosView()
+            FavoritesView()
                 .tabItem {
                     Label("Favoritos", systemImage: "heart")
                 }
@@ -25,6 +27,6 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
-        .environment(FavoritosViewModel())
+    ContentView(homeViewModel: HomeViewModel())
+        .environment(FavoritesViewModel())
 }
