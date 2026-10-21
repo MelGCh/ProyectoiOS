@@ -1,13 +1,13 @@
 //
-//  BusquedaCargandoView.swift
+//  SearchLoadingView.swift
 //  Ticketmaster
 //
 
 import SwiftUI
 
-struct BusquedaCargandoView: View {
+struct SearchLoadingView: View {
     
-    @State var busqueda: String = "Concierto"
+    @State var searchText: String = "Concierto"
     
     var body: some View {
         ScrollView {
@@ -37,7 +37,7 @@ struct BusquedaCargandoView: View {
                                 .foregroundStyle(.black)
                                 .padding(.vertical, 12)
                                 .padding(.leading, 12)
-                            TextField(text: $busqueda) {
+                            TextField(text: $searchText) {
                                 Text("Buscar eventos")
                             }
                             Image(systemName: "circle.dotted")
@@ -213,5 +213,5 @@ struct BusquedaCargandoView: View {
 }
 
 #Preview {
-    BusquedaCargandoView()
+    SearchLoadingView()
 }

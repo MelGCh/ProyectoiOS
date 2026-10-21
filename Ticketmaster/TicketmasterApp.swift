@@ -9,12 +9,14 @@ import SwiftUI
 @main
 struct TicketmasterApp: App {
 
-    @State var favoritosViewModel = FavoritosViewModel()
+    @State var favoritesViewModel = FavoritesViewModel()
+
+    let homeViewModel = HomeViewModel()
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(favoritosViewModel)
+            ContentView(homeViewModel: homeViewModel)
+                .environment(favoritesViewModel)
         }
     }
 }

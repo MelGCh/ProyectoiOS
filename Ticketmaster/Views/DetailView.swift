@@ -1,15 +1,15 @@
 //
-//  DetalleView.swift
+//  DetailView.swift
 //  Ticketmaster
 //
 
 import SwiftUI
 
-struct DetalleView: View {
+struct DetailView: View {
 
-    let evento: Evento
+    let event: Event
 
-    @Environment(FavoritosViewModel.self) var favoritosViewModel
+    @Environment(FavoritesViewModel.self) var favoritesViewModel
 
     var body: some View {
         VStack {
@@ -21,7 +21,7 @@ struct DetalleView: View {
 
                     HStack {
                         Spacer()
-                        Image(systemName: evento.icono)
+                        Image(systemName: event.icon)
                             .font(.system(size: 90))
                             .foregroundStyle(.white)
                         Spacer()
@@ -35,7 +35,7 @@ struct DetalleView: View {
 
                     VStack {
                         HStack {
-                            Text(evento.nombre)
+                            Text(event.name)
                                 .font(.system(size: 26))
                                 .bold()
                                 .foregroundStyle(.white)
@@ -43,9 +43,9 @@ struct DetalleView: View {
                             Spacer()
 
                             Button {
-                                favoritosViewModel.alternar(evento)
+                                favoritesViewModel.toggle(event)
                             } label: {
-                                Image(systemName: favoritosViewModel.esFavorito(evento) ? "heart.fill" : "heart")
+                                Image(systemName: favoritesViewModel.isFavorite(event) ? "heart.fill" : "heart")
                                     .font(.system(size: 28))
                                     .foregroundStyle(.white)
                             }
@@ -56,7 +56,7 @@ struct DetalleView: View {
                             Text("Fecha:")
                                 .bold()
                                 .foregroundStyle(.white)
-                            Text("\(evento.fecha) | \(evento.hora) hrs")
+                            Text("\(event.date) | \(event.time) hrs")
                                 .foregroundStyle(.white)
                             Spacer()
                         }
@@ -65,7 +65,7 @@ struct DetalleView: View {
                             Text("Lugar:")
                                 .bold()
                                 .foregroundStyle(.white)
-                            Text("\(evento.lugar), \(evento.ciudad)")
+                            Text("\(event.venue), \(event.city)")
                                 .foregroundStyle(.white)
                             Spacer()
                         }
@@ -80,7 +80,7 @@ struct DetalleView: View {
                         .padding(.top, 30)
 
                         HStack {
-                            Text(evento.descripcion)
+                            Text(event.description)
                                 .foregroundStyle(.white)
                             Spacer()
                         }
@@ -94,7 +94,7 @@ struct DetalleView: View {
 
             //Botón
 
-            if let url = URL(string: evento.enlaceEntradas) {
+            if let url = event.ticketsLink {
                 Link(destination: url) {
                     Text("Comprar o Consultar Entradas")
                         .bold()
@@ -117,7 +117,7 @@ struct DetalleView: View {
 
 #Preview {
     NavigationStack {
-        DetalleView(evento: eventosDeEjemplo[2])
+        DetailView(event: sampleEvents[2])
     }
-    .environment(FavoritosViewModel())
+    .environment(FavoritesViewModel())
 }
